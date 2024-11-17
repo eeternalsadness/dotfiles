@@ -85,11 +85,11 @@ alias wsupdate='docker pull caudit123/workspace:latest && docker image prune -f'
 alias wsrm='docker stop workspace; docker rm workspace'
 
 # obsidian aliases
-alias zet='$SCRIPTS/obsidian/zet-new-file.sh'
-alias day='$SCRIPTS/obsidian/daily-note.sh'
-alias week='$SCRIPTS/obsidian/weekly-note.sh'
-alias month='$SCRIPTS/obsidian/monthly-note.sh'
-alias year='$SCRIPTS/obsidian/yearly-note.sh'
+alias zet='bash $SCRIPTS/obsidian/zet-new-file.sh'
+alias day='bash $SCRIPTS/obsidian/daily-note.sh'
+alias week='bash $SCRIPTS/obsidian/weekly-note.sh'
+alias month='bash $SCRIPTS/obsidian/monthly-note.sh'
+alias year='bash $SCRIPTS/obsidian/yearly-note.sh'
 
 # bash aliases
 alias bashconfig='nvim ~/.bashrc && source ~/.bashrc'
@@ -98,5 +98,5 @@ alias bashconfig='nvim ~/.bashrc && source ~/.bashrc'
 export GITLAB_TOKEN=''
 export GITLAB_HOST='gitlab.com'
 
-alias glpid='$SCRIPTS/gitlab/get-project-id.sh'
-alias gluid='$SCRIPTS/gitlab/get-user-id.sh'
+alias glpid='bash $SCRIPTS/gitlab/get-project-id.sh'
+alias gluid='bash $SCRIPTS/gitlab/get-user-id.sh'
