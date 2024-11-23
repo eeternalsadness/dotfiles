@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -n "$DOTFILES_DIR" ]]; then
+if [[ -z "$DOTFILES_DIR" ]]; then
     echo "Environment variable 'DOTFILES_DIR' not set. Please set this variable to use this script."
     exit 1
 fi
