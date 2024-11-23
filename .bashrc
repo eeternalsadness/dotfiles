@@ -61,6 +61,7 @@ export OBSIDIAN="$HOME/Obsidian"
 export OBSIDIAN_INBOX="$HOME/Obsidian/0-inbox"
 export SCRIPTS="$HOME/scripts"
 export REPO="$HOME/Repo"
+export DOTFILES_DIR="$HOME/.dotfiles"
 export LANG="en_US.UTF-8"
 
 # git aliases
