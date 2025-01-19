@@ -17,7 +17,7 @@ shopt -s globstar
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # use color prompt
@@ -25,11 +25,11 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
@@ -45,11 +45,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-    fi
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
 
 # enable vim mode
@@ -99,5 +99,18 @@ alias bashconfig='nvim ~/.bashrc && source ~/.bashrc'
 export GITLAB_TOKEN=''
 export GITLAB_HOST='gitlab.com'
 
-alias glpid='bash $SCRIPTS/gitlab/get-project-id.sh'
-alias gluid='bash $SCRIPTS/gitlab/get-user-id.sh'
+alias glpid='$SCRIPTS/gitlab/get-project-id.sh'
+alias gluid='$SCRIPTS/gitlab/get-user-id.sh'
+
+# tmux aliases
+alias tconfig='nvim ~/.tmux.conf && tmux source ~/.tmux.conf'
+alias ti='bash $SCRIPTS/tmux/start-tmux.sh'
+alias ta='tmux attach-session -t main'
+
+# VPN
+alias vpnon='sudo systemctl start openvpn@client.service'
+alias vpnoff='sudo systemctl stop openvpn@client.service'
+alias vpnstatus='systemctl status openvpn@client.service'
+
+# kubernetes
+alias k='kubectl'
