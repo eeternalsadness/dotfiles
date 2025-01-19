@@ -55,15 +55,6 @@ fi
 # enable vim mode
 set -o vi
 
-# envs
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export OBSIDIAN="$HOME/Obsidian"
-export OBSIDIAN_INBOX="$HOME/Obsidian/0-inbox"
-export SCRIPTS="$HOME/scripts"
-export REPO="$HOME/Repo"
-export DOTFILES_DIR="$HOME/.dotfiles"
-export LANG="en_US.UTF-8"
-
 # git aliases
 alias gco='git checkout $(git branch -a | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//;s/^remotes\/origin\///" | sort | uniq | fzf)'
 alias gbd='git branch -D $(git branch | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//" | fzf --multi)'
@@ -96,9 +87,6 @@ alias year='bash $SCRIPTS/obsidian/yearly-note.sh'
 alias bashconfig='nvim ~/.bashrc && source ~/.bashrc'
 
 # gitlab
-export GITLAB_TOKEN=''
-export GITLAB_HOST='gitlab.com'
-
 alias glpid='$SCRIPTS/gitlab/get-project-id.sh'
 alias gluid='$SCRIPTS/gitlab/get-user-id.sh'
 
