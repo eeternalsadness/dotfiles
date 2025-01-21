@@ -55,10 +55,13 @@ fi
 # enable vim mode
 set -o vi
 
+# increase file descriptor limit
+ulimit -n 1024
+
 # git aliases
 alias gco='git checkout $(git branch -a | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//;s/^remotes\/origin\///" | sort | uniq | fzf)'
 alias gbd='git branch -D $(git branch | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//" | fzf --multi)'
-alias gfp='git fetch && git pull'
+alias gfp='git fetch --prune && git pull'
 
 # ws aliases
 alias wsinit='docker run --privileged -dit \
@@ -102,3 +105,6 @@ alias vpnstatus='systemctl status openvpn@client.service'
 
 # kubernetes
 alias k='kubectl'
+
+# python venv
+alias venv='source ~/.venv/bin/activate'
