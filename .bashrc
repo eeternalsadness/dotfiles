@@ -63,22 +63,6 @@ alias gco='git checkout $(git branch -a | grep -v "HEAD ->" | tr -d "[\t\ ]" | s
 alias gbd='git branch -D $(git branch | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//" | fzf --multi)'
 alias gfp='git fetch --prune && git pull'
 
-# ws aliases
-alias wsinit='docker run --privileged -dit \
-    --name workspace \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v $REPO:/root/Repo \
-    -v $OBSIDIAN:/root/Obsidian \
-    caudit123/workspace:latest'
-alias wsrun='docker start workspace; docker exec -it workspace bash'
-alias wstest='docker run --privileged -it --rm \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v $REPO:/root/Repo \
-    -v $OBSIDIAN:/root/Obsidian \
-    caudit123/workspace:latest'
-alias wsupdate='docker pull caudit123/workspace:latest && docker image prune -f'
-alias wsrm='docker stop workspace; docker rm workspace'
-
 # obsidian aliases
 alias zet='bash $SCRIPTS/obsidian/zet-new-file.sh'
 alias day='bash $SCRIPTS/obsidian/daily-note.sh'
