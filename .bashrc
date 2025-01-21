@@ -92,3 +92,8 @@ alias k='kubectl'
 
 # python venv
 alias venv='source ~/.venv/bin/activate'
+
+# ssh completion
+if [[ -f "$SCRIPTS/completion/ssh-completion.sh" ]]; then
+  source $SCRIPTS/completion/ssh-completion.sh
+fi
