@@ -97,3 +97,8 @@ alias venv='source ~/.venv/bin/activate'
 if [[ -f "$SCRIPTS/completion/ssh-completion.sh" ]]; then
   source $SCRIPTS/completion/ssh-completion.sh
 fi
+
+# use devbox shell
+if [[ -z "$DEVBOX_SHELL_ENABLED" ]]; then
+  devbox shell
+fi
