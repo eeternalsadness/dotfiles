@@ -85,6 +85,7 @@ alias day='bash $SCRIPTS/obsidian/daily-note.sh'
 alias week='bash $SCRIPTS/obsidian/weekly-note.sh'
 alias month='bash $SCRIPTS/obsidian/monthly-note.sh'
 alias year='bash $SCRIPTS/obsidian/yearly-note.sh'
+alias zipnotes='bash $SCRIPTS/obsidian/zip-notes.sh'
 
 # bash aliases
 alias bashconfig='nvim ~/.bashrc && source ~/.bashrc'
