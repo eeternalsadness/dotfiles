@@ -1,5 +1,5 @@
 # NOTE: only start hyprland on arch
-if [[ $(cat /etc/os-release | grep "^ID=" | sed 's/^ID=//') == "arch" ]]; then
+if [[ -f "etc/os-release" ]] && [[ $(cat "/etc/os-release" | grep "^ID=" | sed 's/^ID=//') == "arch" ]]; then
   if uwsm check may-start; then
     exec uwsm start hyprland.desktop
   fi
