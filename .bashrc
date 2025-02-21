@@ -24,7 +24,12 @@ fi
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [[ $(uname) == "Darwin" ]]; then
+  alias ls='ls -G' # Change to -G for macOS
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+elif [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
   alias grep='grep --color=auto'
@@ -39,16 +44,23 @@ alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+if [[ $(uname) == "Darwin" ]]; then
+  # The notify-send command doesn't exist on macOS, use osascript instead.
+  alias alert='osascript -e "display notification \"$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'' )\" with title \"Alert\""'
+else
+  alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
+if [[ $(uname) == "Darwin" ]]; then
+  [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+elif ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
+    . "/usr/share/bash-completion/bash_completion"
   elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    . "/etc/bash_completion"
   fi
 fi
 
@@ -62,6 +74,10 @@ ulimit -n 1024
 alias gco='git checkout $(git branch -a | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//;s/^remotes\/origin\///" | sort | uniq | fzf)'
 alias gbd='git branch -D $(git branch | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//" | fzf --multi)'
 alias gfp='git fetch --prune && git pull'
+
+# terraform
+alias tf='terraform'
+alias tfv='bash $SCRIPTS/terraform/tf-get-provider-latest-version.sh'
 
 # obsidian aliases
 alias zet='bash $SCRIPTS/obsidian/zet-new-file.sh'
@@ -77,10 +93,17 @@ alias bashconfig='nvim ~/.bashrc && source ~/.bashrc'
 alias glpid='$SCRIPTS/gitlab/get-project-id.sh'
 alias gluid='$SCRIPTS/gitlab/get-user-id.sh'
 
+# ssh aliases
+alias sshgenconfig='bash $SCRIPTS/ssh/generate-ssh-config-from-rdm-export.sh'
+alias sshenv='bash $SCRIPTS/ssh/switch-env.sh'
+
 # tmux aliases
 alias tconfig='nvim ~/.tmux.conf && tmux source ~/.tmux.conf'
 alias ti='bash $SCRIPTS/tmux/start-tmux.sh'
-alias ta='tmux attach-session -t main'
+alias tk='tmux kill-server'
+
+# pass aliases
+alias p='pass show -c'
 
 # VPN
 alias vpnon='sudo systemctl start openvpn@client.service'
