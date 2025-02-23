@@ -70,6 +70,12 @@ set -o vi
 # increase file descriptor limit
 ulimit -n 1024
 
+# asusctl stuff
+if [[ -n $(which asusctl) ]] && [[ -n $(which supergfxctl) ]]; then
+  alias kb='bash $SCRIPTS/asusctl/toggle-keyboard-backlight.sh'
+  alias pow='bash $SCRIPTS/asusctl/switch-power-profile.sh'
+fi
+
 # git aliases
 alias gco='git checkout $(git branch -a | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//;s/^remotes\/origin\///" | sort | uniq | fzf)'
 alias gbd='git branch -D $(git branch | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//" | fzf --multi)'
