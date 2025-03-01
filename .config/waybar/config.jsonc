@@ -12,9 +12,7 @@
     // "sway/scratchpad",
     // "custom/media"
   ],
-  "modules-center": [
-    "hyprland/window"
-  ],
+  "modules-center": [],
   "modules-right": [
     //"mpd",
     //"idle_inhibitor",
@@ -111,6 +109,7 @@
   },
   "clock": {
     // "timezone": "America/New_York",
+    "format": "{:%I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
