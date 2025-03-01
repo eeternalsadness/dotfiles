@@ -17,7 +17,7 @@
   ],
   "modules-right": [
     //"mpd",
-    "idle_inhibitor",
+    //"idle_inhibitor",
     "wireplumber",
     "network",
     "power-profiles-daemon",
@@ -26,11 +26,11 @@
     "temperature",
     //"backlight",
     //"keyboard-state",
-    "sway/language",
+    //"sway/language",
     "battery",
     //"battery#bat2",
-    "clock",
-    "tray"
+    "clock"
+    //"tray"
     //"custom/power"
   ],
   // Modules configuration
@@ -185,35 +185,36 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "{signalStrength}% ",
     "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
+    "tooltip-format": "{essid}: {ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "wireplumber": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "on-click": "pavucontrol"
+    "format": " {volume}%",
+    //"format-bluetooth": "{volume}% {icon} {format_source}",
+    //"format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "  {volume}%",
+    "max-volume": 100.0,
+    //"format-source": "{volume}% ",
+    //"format-source-muted": "",
+    //"format-icons": {
+    //  "headphone": "",
+    //  "hands-free": "",
+    //  "headset": "",
+    //  "phone": "",
+    //  "portable": "",
+    //  "car": "",
+    //  "default": [
+    //    "",
+    //    "",
+    //    ""
+    //  ]
+    //},
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "custom/media": {
     "format": "{icon} {}",
