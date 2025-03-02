@@ -187,8 +187,7 @@
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{essid}: {ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-disconnected": "⚠"
   },
   "wireplumber": {
     // "scroll-step": 1, // %, can be a float
