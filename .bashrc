@@ -113,9 +113,9 @@ alias tk='tmux kill-server'
 alias p='pass show -c'
 
 # VPN
-alias vpnon='sudo systemctl start openvpn@client.service'
-alias vpnoff='sudo systemctl stop openvpn@client.service'
-alias vpnstatus='systemctl status openvpn@client.service'
+alias vpnon='sudo systemctl start openvpn-client@client.service'
+alias vpnoff='sudo systemctl stop openvpn-client@client.service'
+alias vpnstatus='systemctl status openvpn-client@client.service'
 
 # kubernetes
 alias k='kubectl'
