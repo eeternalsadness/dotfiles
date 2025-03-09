@@ -16,10 +16,16 @@ settings:
         K: tab-next
   colors.webpage.darkmode.enabled:
     global: true
+  content.autoplay:
+    global: false
+  content.geolocation:
+    https://phuclong.com.vn: false
+    https://www.fortinet.com: false
   content.javascript.clipboard:
     https://github.com: access-paste
     https://wiki.hyprland.org: access-paste
   content.notifications.enabled:
+    https://www.facebook.com: false
     https://www.youtube.com: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
