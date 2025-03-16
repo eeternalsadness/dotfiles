@@ -11,7 +11,7 @@ settings:
   bindings.commands:
     global:
       normal:
-        ',p': spawn --userscript qute-pass
+        ",p": spawn --userscript qute-pass
         J: tab-prev
         K: tab-next
   colors.webpage.darkmode.enabled:
@@ -21,14 +21,12 @@ settings:
   content.autoplay:
     global: false
   content.geolocation:
-    https://phuclong.com.vn: false
-    https://www.fortinet.com: false
+    global: false
   content.javascript.clipboard:
     https://chatgpt.com: access-paste
     https://github.com: access-paste
     https://wiki.hyprland.org: access-paste
   content.notifications.enabled:
-    https://www.facebook.com: false
-    https://www.youtube.com: false
+    global: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
