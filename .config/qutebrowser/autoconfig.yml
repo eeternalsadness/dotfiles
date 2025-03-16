@@ -15,7 +15,9 @@ settings:
         J: tab-prev
         K: tab-next
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
+  colors.webpage.preferred_color_scheme:
+    global: dark
   content.autoplay:
     global: false
   content.geolocation:
