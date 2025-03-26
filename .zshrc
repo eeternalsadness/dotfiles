@@ -53,7 +53,7 @@ alias year='$SCRIPTS/obsidian/yearly-note.sh'
 alias zipnotes='$SCRIPTS/obsidian/zip-notes.sh'
 
 # bash aliases
-alias bashconfig='nvim ~/.bashrc && source ~/.bashrc'
+alias zshconfig='nvim ~/.zshrc && source ~/.zshrc'
 
 # gitlab
 alias glpid='$SCRIPTS/gitlab/get-project-id.sh'
@@ -72,9 +72,9 @@ alias tk='tmux kill-server'
 alias p='pass show -c'
 
 # VPN
-alias vpnon='sudo systemctl start openvpn-client@client.service'
-alias vpnoff='sudo systemctl stop openvpn-client@client.service'
-alias vpnstatus='systemctl status openvpn-client@client.service'
+alias vpnon='sudo launchctl start com.openvpn.client.plist'
+alias vpnoff='sudo launchctl stop com.openvpn.client.plist'
+alias vpnstatus='launchctl list | grep openvpn'
 
 # kubernetes
 alias k='kubectl'
