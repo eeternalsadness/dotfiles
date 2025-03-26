@@ -74,7 +74,7 @@ alias p='pass show -c'
 # VPN
 alias vpnon='sudo launchctl start com.openvpn.client.plist'
 alias vpnoff='sudo launchctl stop com.openvpn.client.plist'
-alias vpnstatus='launchctl list | grep openvpn'
+alias vpnstatus='sudo launchctl list | grep openvpn'
 
 # kubernetes
 alias k='kubectl'
