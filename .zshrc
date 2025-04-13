@@ -79,6 +79,8 @@ alias vpnstatus='sudo launchctl list | grep openvpn'
 # kubernetes
 alias k='kubectl'
 
+source <(kubectl completion zsh)
+
 # python venv
 alias venv='source ~/.venv/bin/activate'
 
