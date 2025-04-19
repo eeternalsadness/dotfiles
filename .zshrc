@@ -42,7 +42,8 @@ alias gfp='git fetch --prune && git pull'
 
 # terraform
 alias tf='terraform'
-alias tfv='bash $SCRIPTS/terraform/tf-get-provider-latest-version.sh'
+alias tfv='$SCRIPTS/terraform/tf-get-provider-latest-version.sh'
+alias tff='terraform fmt -recursive && terraform validate'
 
 # obsidian aliases
 alias zet='$SCRIPTS/obsidian/zet-new-file.sh'
