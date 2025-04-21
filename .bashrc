@@ -84,6 +84,7 @@ alias gfp='git fetch --prune && git pull'
 # terraform
 alias tf='terraform'
 alias tfv='bash $SCRIPTS/terraform/tf-get-provider-latest-version.sh'
+alias tff='terraform fmt -recursive && terraform validate'
 
 # obsidian aliases
 alias zet='bash $SCRIPTS/obsidian/zet-new-file.sh'
@@ -95,14 +96,17 @@ alias zipnotes='bash $SCRIPTS/obsidian/zip-notes.sh'
 
 # bash aliases
 alias bashconfig='nvim ~/.bashrc && source ~/.bashrc'
+alias envconfig='nvim ~/.env && source ~/.env'
 
 # gitlab
 alias glpid='$SCRIPTS/gitlab/get-project-id.sh'
 alias gluid='$SCRIPTS/gitlab/get-user-id.sh'
+alias glapi='$SCRIPTS/gitlab/call-api.sh'
 
 # ssh aliases
 alias sshgenconfig='bash $SCRIPTS/ssh/generate-ssh-config-from-rdm-export.sh'
 alias sshenv='bash $SCRIPTS/ssh/switch-env.sh'
+alias ssh='pass show -c vpn && ssh'
 
 # tmux aliases
 alias tconfig='nvim ~/.tmux.conf && tmux source ~/.tmux.conf'
