@@ -82,8 +82,19 @@ alias k='kubectl'
 
 source <(kubectl completion zsh)
 
+# vault
+alias vlvault='export VAULT_TOKEN=$(vault login -method=oidc role="terraform-vault" -format=json | jq -r .auth.client_token)'
+
 # python venv
-alias venv='source ~/.venv/bin/activate'
+activate_venv ()
+{
+  root_dir="${1:-$HOME}"
+  source "${root_dir}/.venv/bin/activate"
+}
+alias venv='activate_venv'
+
+# claude desktop
+alias claudeconfig='nvim ~/Library/Application\ Support/Claude/claude_desktop_config.json'
 
 # use devbox shell
 if [[ -z "$DEVBOX_SHELL_ENABLED" ]]; then
