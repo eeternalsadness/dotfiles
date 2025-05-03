@@ -77,10 +77,19 @@ alias vpnon='sudo launchctl start com.openvpn.client.plist'
 alias vpnoff='sudo launchctl stop com.openvpn.client.plist'
 alias vpnstatus='sudo launchctl list | grep openvpn'
 
+# asusctl stuff
+if [[ -n $(which asusctl) ]] && [[ -n $(which supergfxctl) ]]; then
+  alias kb='$SCRIPTS/asusctl/toggle-keyboard-backlight.sh'
+  alias pow='$SCRIPTS/asusctl/switch-power-profile.sh'
+fi
+
 # kubernetes
 alias k='kubectl'
 
-source <(kubectl completion zsh)
+# kubectl installed inside devbox
+if [[ -n "$DEVBOX_SHELL_ENABLED" ]]; then
+  source <(kubectl completion zsh)
+fi
 
 # vault
 alias vlvault='export VAULT_TOKEN=$(vault login -method=oidc role="terraform-vault" -format=json | jq -r .auth.client_token)'
@@ -96,11 +105,11 @@ alias venv='activate_venv'
 # claude desktop
 alias claudeconfig='nvim ~/Library/Application\ Support/Claude/claude_desktop_config.json'
 
+# zsh extras
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # use devbox shell
 if [[ -z "$DEVBOX_SHELL_ENABLED" ]]; then
   devbox shell
 fi
-
-# zsh extras
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
