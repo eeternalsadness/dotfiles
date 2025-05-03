@@ -72,8 +72,8 @@ ulimit -n 1024
 
 # asusctl stuff
 if [[ -n $(which asusctl) ]] && [[ -n $(which supergfxctl) ]]; then
-  alias kb='bash $SCRIPTS/asusctl/toggle-keyboard-backlight.sh'
-  alias pow='bash $SCRIPTS/asusctl/switch-power-profile.sh'
+  alias kb='$SCRIPTS/asusctl/toggle-keyboard-backlight.sh'
+  alias pow='$SCRIPTS/asusctl/switch-power-profile.sh'
 fi
 
 # git aliases
