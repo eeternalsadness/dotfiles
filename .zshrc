@@ -102,6 +102,18 @@ activate_venv ()
 }
 alias venv='activate_venv'
 
+# aws
+set_aws_profile() {
+  local aws_profile="$1"
+
+  if [ -z "$aws_profile" ]; then
+    echo "AWS profile name missing"
+  fi
+
+  export AWS_PROFILE="$aws_profile"
+}
+alias awsenv='set_aws_profile'
+
 # claude desktop
 alias claudeconfig='nvim ~/Library/Application\ Support/Claude/claude_desktop_config.json'
 
