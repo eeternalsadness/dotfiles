@@ -125,7 +125,23 @@ alias vpnstatus='systemctl status openvpn-client@client.service'
 alias k='kubectl'
 
 # python venv
-alias venv='source ~/.venv/bin/activate'
+activate_venv() {
+  local root_dir="${1:-$HOME}"
+  source "${root_dir}/.venv/bin/activate"
+}
+alias venv='activate_venv'
+
+# aws
+set_aws_profile() {
+  local aws_profile="$1"
+
+  if [ -z "$aws_profile" ]; then
+    echo "AWS profile name missing"
+  fi
+
+  export AWS_PROFILE="$aws_profile"
+}
+alias awsenv='set_aws_profile'
 
 # ssh completion
 if [[ -f "$SCRIPTS/completion/ssh-completion.sh" ]]; then
