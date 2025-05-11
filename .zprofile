@@ -5,6 +5,10 @@ elif [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+if [[ -f ~/.zshrc ]]; then
+  source ~/.zshrc
+fi
+
 # NOTE: only start hyprland on arch
 if [[ -f "/etc/os-release" ]] && [[ $(cat "/etc/os-release" | grep "^ID=" | sed 's/^ID=//') == "arch" ]]; then
   if uwsm check may-start; then
