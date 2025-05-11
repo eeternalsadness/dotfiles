@@ -92,7 +92,13 @@ if [[ -n "$DEVBOX_SHELL_ENABLED" ]]; then
 fi
 
 # vault
-alias vlvault='export VAULT_TOKEN=$(vault login -method=oidc role="terraform-vault" -format=json | jq -r .auth.client_token)'
+vault_login() {
+  local mount_path="${2:-oidc}"
+  local role="$1"
+
+  export VAULT_TOKEN=$(vault login -method=oidc -path="$mount_path" role="$role" -format=json | jq -r .auth.client_token)
+}
+alias vl='vault_login'
 
 # python venv
 activate_venv ()
