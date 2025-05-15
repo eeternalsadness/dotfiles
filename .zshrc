@@ -93,8 +93,8 @@ fi
 
 # vault
 vault_login() {
-  local mount_path="${2:-oidc}"
   local role="$1"
+  local mount_path="${2:-oidc-google}"
 
   export VAULT_TOKEN=$(vault login -method=oidc -path="$mount_path" role="$role" -format=json | jq -r .auth.client_token)
 }
