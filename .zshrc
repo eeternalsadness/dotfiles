@@ -100,6 +100,9 @@ vault_login() {
 }
 alias vl='vault_login'
 
+# grafana
+alias grafanaauth='export GRAFANA_AUTH="$(vault kv get -mount=kvv2 -field=username grafana/users/admin):$(vault kv get -mount=kvv2 -field=password grafana/users/admin)"'
+
 # python venv
 activate_venv ()
 {
