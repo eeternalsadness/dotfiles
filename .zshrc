@@ -85,6 +85,8 @@ fi
 
 # kubernetes
 alias k='kubectl'
+alias kns='kubens'
+alias ktx='kubectx'
 
 # kubectl installed inside devbox
 if [[ -n "$DEVBOX_SHELL_ENABLED" ]]; then
@@ -102,6 +104,17 @@ alias vl='vault_login'
 
 # grafana
 alias grafanaauth='export GRAFANA_AUTH="$(vault kv get -mount=kvv2 -field=username grafana/users/admin):$(vault kv get -mount=kvv2 -field=password grafana/users/admin)"'
+
+# consul
+consul_get_token() {
+  local role="$1"
+  export CONSUL_HTTP_TOKEN=$(vault read consul/creds/${role} -format=json | jq -r '.data.token')
+}
+alias consultoken='consul_get_token'
+
+# VPN
+alias vpnnp='sudo openfortivpn -c ~/.config/openfortivpn/dev.conf'
+alias vpnp='sudo openfortivpn -c ~/.config/openfortivpn/prod.conf'
 
 # python venv
 activate_venv ()
