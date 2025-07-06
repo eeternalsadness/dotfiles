@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y git ca-certificates unzip curl wget fzf
 
 # neovim prerequisites
 RUN apt-get install -y ninja-build gettext cmake build-essential && \
-  git clone --depth=1 https://github.com/neovim/neovim
+  git clone --depth=1 https://github.com/neovim/neovim && \
+  cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install && \
+  cd .. && rm -rf neovim && \
 
 # time zone
 ARG TZ_AREA=Asia
