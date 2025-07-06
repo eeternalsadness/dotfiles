@@ -5,10 +5,11 @@ FROM ubuntu:${UBUNTU_VER}
 WORKDIR /root/
 
 # common tools
-RUN apt-get update && apt-get install -y git ca-certificates unzip curl wget tmux fzf
+RUN apt-get update && apt-get install -y git ca-certificates unzip curl wget fzf
 
 # neovim prerequisites
-RUN apt-get install -y ninja-build gettext cmake
+RUN apt-get install -y ninja-build gettext cmake build-essential && \
+  git clone --depth=1 https://github.com/neovim/neovim
 
 # time zone
 ARG TZ_AREA=Asia
