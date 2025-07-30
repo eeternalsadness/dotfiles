@@ -4,11 +4,12 @@ print("Hello NeoVim 3")
 
 
 MyFunction = function()
-	print("Hello from a function")
+  print("Hello from a function")
 end
 
 -- vim options
 vim.opt.shiftwidth = 4 -- set tab width to 4 spaces
+vim.opt.clipboard = "unnamedplus" -- set paste to use the clipboard buffer
 
 -- map <space>r to source current file in normal mode
 vim.keymap.set("n", "<space>r", "<cmd>source %<CR>", { desc = "Source current file" })
