@@ -3,10 +3,11 @@ HISTCONTROL=ignoreboth
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILE="$HOME/.zsh_history"
+SAVEHIST=2000
 
 # setopt
-setopt extended_glob
+setopt extended_glob no_extended_history hist_ignore_dups inc_append_history share_history
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -15,6 +16,7 @@ alias l='ls -CF'
 
 # enable vim mode
 set -o vi
+bindkey '^R' history-incremental-search-backward
 
 # increase file descriptor limit
 ulimit -n 1024
@@ -53,7 +55,7 @@ alias month='$SCRIPTS/obsidian/monthly-note.sh'
 alias year='$SCRIPTS/obsidian/yearly-note.sh'
 alias zipnotes='$SCRIPTS/obsidian/zip-notes.sh'
 
-# bash aliases
+# zsh aliases
 alias zshconfig='nvim ~/.zshrc && source ~/.zshrc'
 
 # gitlab
