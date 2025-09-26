@@ -1,13 +1,4 @@
-# don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILE="$HOME/.zsh_history"
 SAVEHIST=2000
-
-# setopt
-setopt extended_glob no_extended_history hist_ignore_dups inc_append_history share_history
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -36,6 +27,9 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
+# setopt
+setopt extended_glob hist_ignore_dups inc_append_history no_extended_history share_history
 
 # git aliases
 alias gco='git checkout $(git branch -a | grep -v "HEAD ->" | tr -d "[\t\ ]" | sed "s/^\*//;s/^remotes\/origin\///" | sort | uniq | fzf)'
@@ -74,10 +68,9 @@ alias tk='tmux kill-server'
 # pass aliases
 alias p='pass show -c'
 
-# VPN
-alias vpnon='sudo launchctl start com.openvpn.client.plist'
-alias vpnoff='sudo launchctl stop com.openvpn.client.plist'
-alias vpnstatus='sudo launchctl list | grep openvpn'
+# nvim aliases
+alias vim='nvim'
+alias vi='nvim'
 
 # asusctl stuff
 if [[ -n $(which asusctl) ]] && [[ -n $(which supergfxctl) ]]; then
