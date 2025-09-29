@@ -147,6 +147,7 @@ if [[ -z "$DEVBOX_SHELL_ENABLED" ]]; then
     devbox_projects+="$dir"
   done
 
+  PS3="Select the devbox project to use: "
   select opt in "${devbox_projects[@]}"; do
     devbox shell -c "$opt"
   done
