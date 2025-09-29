@@ -140,5 +140,14 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # use devbox shell
 if [[ -z "$DEVBOX_SHELL_ENABLED" ]]; then
-  devbox shell
+  DEVBOX_REPO_DIR="$HOME/Repo/personal/devbox"
+  devbox_projects=()
+
+  for dir in $DEVBOX_REPO_DIR/*/; do
+    devbox_projects+="$dir"
+  done
+
+  select opt in "${devbox_projects[@]}"; do
+    devbox shell -c "$opt"
+  done
 fi
