@@ -138,17 +138,36 @@ alias claudeconfig='nvim ~/Library/Application\ Support/Claude/claude_desktop_co
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# devbox
+start_devbox_shell() {
+  if [[ -z "$DEVBOX_SHELL_ENABLED" ]]; then
+    local devbox_repo_dir="$HOME/Repo/personal/devbox"
+    local devbox_projects=()
+    local devbox_dir=""
+    local prompt_msg="Select the devbox project to use: "
+
+    if type fzf; then
+      devbox_dir=$(fzf --walker=dir --walker-root="$devbox_repo_dir" --prompt="$prompt_msg")
+    else
+      for dir in $devbox_repo_dir/*/; do
+        devbox_projects+="$dir"
+      done
+
+      PS3="$prompt_msg"
+      select opt in "${devbox_projects[@]}"; do
+        devbox_dir="$opt"
+        break
+      done
+    fi
+
+    if [[ -z "$devbox_dir" ]]; then
+      echo "No selection made. Cannot start a devbox shell!"
+    else
+      devbox shell -c "$devbox_dir"
+    fi
+  fi
+}
+alias dbs='start_devbox_shell'
+
 # use devbox shell
-if [[ -z "$DEVBOX_SHELL_ENABLED" ]]; then
-  DEVBOX_REPO_DIR="$HOME/Repo/personal/devbox"
-  devbox_projects=()
-
-  for dir in $DEVBOX_REPO_DIR/*/; do
-    devbox_projects+="$dir"
-  done
-
-  PS3="Select the devbox project to use: "
-  select opt in "${devbox_projects[@]}"; do
-    devbox shell -c "$opt"
-  done
-fi
+start_devbox_shell
