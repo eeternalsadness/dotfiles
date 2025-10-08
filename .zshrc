@@ -168,6 +168,7 @@ start_devbox_shell() {
   fi
 }
 alias dbs='start_devbox_shell'
+alias db='devbox -c $DEVBOX_PROJECT_ROOT'
 
 # use devbox shell
 start_devbox_shell
