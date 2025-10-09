@@ -1,5 +1,11 @@
 SAVEHIST=2000
 
+# directories
+export REPO="$HOME/Repo"
+export SCRIPTS="$HOME/Repo/personal/scripts"
+export OBSIDIAN="$HOME/Obsidian"
+export OBSIDIAN_INBOX="$HOME/Obsidian/0-inbox"
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -139,36 +145,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # devbox
-start_devbox_shell() {
-  if [[ -z "$DEVBOX_SHELL_ENABLED" ]]; then
-    local devbox_repo_dir="$HOME/Repo/personal/devbox"
-    local devbox_projects=()
-    local devbox_dir=""
-    local prompt_msg="Select the devbox project to use: "
-
-    if type fzf; then
-      devbox_dir=$(fzf --walker=dir --walker-root="$devbox_repo_dir" --prompt="$prompt_msg")
-    else
-      for dir in $devbox_repo_dir/*/; do
-        devbox_projects+="$dir"
-      done
-
-      PS3="$prompt_msg"
-      select opt in "${devbox_projects[@]}"; do
-        devbox_dir="$opt"
-        break
-      done
-    fi
-
-    if [[ -z "$devbox_dir" ]]; then
-      echo "No selection made. Cannot start a devbox shell!"
-    else
-      devbox shell -c "$devbox_dir"
-    fi
-  fi
-}
-alias dbs='start_devbox_shell'
+alias dbs='$SCRIPTS/devbox/start-devbox-shell.sh'
 alias db='devbox -c $DEVBOX_PROJECT_ROOT'
 
 # use devbox shell
-start_devbox_shell
+$SCRIPTS/devbox/start-devbox-shell.sh
