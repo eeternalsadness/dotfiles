@@ -145,7 +145,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # devbox
-alias dbs='$SCRIPTS/devbox/start-devbox-shell.sh'
+alias dbs='CALLER=dbs $SCRIPTS/devbox/start-devbox-shell.sh'
 alias db='devbox -c $DEVBOX_PROJECT_ROOT'
 
 # use devbox shell
