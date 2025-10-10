@@ -5,6 +5,7 @@ export REPO="$HOME/Repo"
 export SCRIPTS="$HOME/Repo/personal/scripts"
 export OBSIDIAN="$HOME/Obsidian"
 export OBSIDIAN_INBOX="$HOME/Obsidian/0-inbox"
+export DEVBOX_REPO_DIR="$HOME/Repo/personal/devbox"
 
 # some more ls aliases
 alias ll='ls -alF'
