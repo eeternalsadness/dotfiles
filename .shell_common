@@ -1,0 +1,4 @@
+# ALL COMMON SHELL CONFIGS THAT ARE NOT ENVS OR ALIASES GO HERE
+
+# increase file descriptor limit
+ulimit -n 1024

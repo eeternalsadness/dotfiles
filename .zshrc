@@ -1,13 +1,12 @@
+# source envs, aliases, and common configs
 source "$HOME/.shell_envs"
 source "$HOME/.shell_aliases"
+source "$HOME/.shell_common"
 
 # config history & vi mode
 SAVEHIST=2000
 setopt vi extended_glob hist_ignore_dups inc_append_history no_extended_history share_history
 bindkey '^R' history-incremental-search-backward
-
-# increase file descriptor limit
-ulimit -n 1024
 
 # pure prompt
 PURE_GIT_PULL=0
