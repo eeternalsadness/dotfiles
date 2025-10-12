@@ -148,6 +148,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # devbox
 alias dbs='CALLER=dbs $SCRIPTS/devbox/start-devbox-shell.sh'
 alias db='devbox -c $DEVBOX_PROJECT_ROOT'
+alias dotfilesupdate='$SCRIPTS/dotfiles/symlink-dotfiles.sh'
 
 # use devbox shell
 $SCRIPTS/devbox/start-devbox-shell.sh
