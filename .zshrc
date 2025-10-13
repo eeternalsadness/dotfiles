@@ -3,9 +3,9 @@ source "$HOME/.shell_envs"
 source "$HOME/.shell_aliases"
 source "$HOME/.shell_common"
 
-# config history & vi mode
+# config history
 SAVEHIST=2000
-setopt vi extended_glob hist_ignore_dups inc_append_history no_extended_history share_history
+setopt extended_glob hist_ignore_dups inc_append_history no_extended_history share_history
 bindkey '^R' history-incremental-search-backward
 
 # pure prompt

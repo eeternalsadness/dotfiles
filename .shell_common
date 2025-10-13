@@ -2,3 +2,6 @@
 
 # increase file descriptor limit
 ulimit -n 1024
+
+# vi mode
+set -o vi
