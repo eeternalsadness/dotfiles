@@ -104,6 +104,6 @@ alias awsenv='set_aws_profile'
 alias claudeconfig='nvim ~/Library/Application\ Support/Claude/claude_desktop_config.json'
 
 # devbox
-alias dbs='CALLER=dbs $SCRIPTS/devbox/start-devbox-shell.sh'
+alias dbs='CALLER=dbs $SCRIPTS/devbox/start-devbox-shell.sh; unset CALLER'
 alias db='devbox -c $DEVBOX_PROJECT_ROOT'
 alias dotfilesupdate='$SCRIPTS/dotfiles/symlink-dotfiles.sh'
