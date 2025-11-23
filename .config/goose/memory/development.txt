@@ -1,0 +1,20 @@
+# developer-extension text-editor directories commands
+Do not use the view command on directories when using the developer extension. Use ls or other directory listing commands instead.
+
+# paths developer files
+Always use absolute paths when working with files/directories using the developer extension tools (text editor, shell commands, etc.). This provides full context and avoids ambiguity about file locations.
+
+# file-handling performance developer-extension
+Always check for file size before using the view command. If the file size is too big, then use view_range to view specific sections or search commands (like rg) to find content instead of using the view command on the entire file. Note: view_range takes positive integers as arguments only. This avoids overwhelming output and improves performance.
+
+# file-type-checking directory-handling view-command @dir-notation
+When user includes @dir/ notation or any directory reference, never use the view command directly. Always check if the path is a file or directory first using ls, file, or stat commands before attempting to view. For directories, use ls or other directory listing commands. For files, proceed with appropriate view command (considering file size limitations).
+
+# text_editor file_handling safety
+Always run `file PATH` before using the text_editor extension's view command. Never use the view command if `file PATH` returns a directory. This ensures proper file type checking and prevents attempting to view directories as files.
+
+# file-checking text-editor best-practices
+Always run `file PATH` before using the text_editor extension's view command. Never use the view command if `file PATH` returns a directory. This ensures proper file type checking and prevents attempting to view directories as files.
+
+# file-checking text-editor workflow mandatory-step
+Always run `file PATH` before using the text_editor extension's view command. Never use the view command if `file PATH` returns a directory. This ensures proper file type checking and prevents attempting to view directories as files.
