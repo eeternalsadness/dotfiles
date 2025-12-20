@@ -1,0 +1,7 @@
+user:
+  always_allow:
+  - duckduckgo-mcp-server__search
+  - memory__retrieve_memories
+  - duckduckgo-mcp-server__fetch_content
+  ask_before: []
+  never_allow: []

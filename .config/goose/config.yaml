@@ -13,7 +13,7 @@ extensions:
     type: builtin
   duckduckgo-mcp-server:
     args:
-      - duckduckgo-mcp-server
+    - duckduckgo-mcp-server
     bundled: null
     cmd: uvx
     description: null
