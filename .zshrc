@@ -24,10 +24,8 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-# kubectl installed inside devbox
-if [[ -n "$DEVBOX_SHELL_ENABLED" ]]; then
-  source <(kubectl completion zsh)
-fi
+type kubectl &>/dev/null && source <(kubectl completion zsh)
+type talosctl &>/dev/null && source <(talosctl completion zsh)
 
 # zsh extras
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
