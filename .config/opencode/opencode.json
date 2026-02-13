@@ -1,0 +1,67 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "*": "ask",
+    "bash": {
+      "*": "ask",
+      "ls": "allow",
+      "grep": "allow"
+    }
+  },
+  "mcp": {
+    "kubernetes": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "kubernetes-mcp-server@latest",
+        "--read-only"
+      ],
+      "enabled": true,
+      "environment": {}
+    },
+    "rovo": {
+      "type": "local",
+      "command": [
+        "npx",
+        "--registry",
+        "https://registry.npmjs.org",
+        "-y",
+        "mcp-remote",
+        "https://mcp.atlassian.com/v1/mcp"
+      ],
+      "enabled": true,
+      "environment": {}
+    },
+    "aws-core": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "awslabs.core-mcp-server@latest",
+        "--no-banner"
+      ],
+      "enabled": true,
+      "environment": {}
+    },
+    "aws-eks": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "awslabs.eks-mcp-server@latest"
+      ],
+      "enabled": true,
+      "environment": {}
+    },
+    "aws-knowledge": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "fastmcp",
+        "run",
+        "--no-banner",
+        "https://knowledge-mcp.global.api.aws"
+      ],
+      "enabled": true,
+      "environment": {}
+    }
+  }
+}
