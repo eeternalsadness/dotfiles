@@ -2,6 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "permission": {
     "*": "ask",
+    "read": {
+      "*": "ask",
+      "~/Repo/*": "allow"
+    },
     "bash": {
       "*": "ask",
       "ls *": "allow",
