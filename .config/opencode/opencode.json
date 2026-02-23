@@ -12,8 +12,14 @@
       "grep *": "allow",
       "head *": "allow",
       "tail *": "allow",
+      "find *": "allow",
       "find * -exec *": "deny"
-    }
+    },
+    "glob": "allow",
+    "list": "allow",
+    "skill": "allow",
+    "todoread": "allow",
+    "todowrite": "allow"
   },
   "mcp": {
     "kubernetes": {
