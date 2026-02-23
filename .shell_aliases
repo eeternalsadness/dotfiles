@@ -107,3 +107,6 @@ alias claudeconfig='nvim ~/Library/Application\ Support/Claude/claude_desktop_co
 alias dbs='$SCRIPTS/devbox/start-devbox-shell.sh dbs'
 alias db='devbox -c $DEVBOX_PROJECT_ROOT'
 alias dotfilesupdate='$SCRIPTS/dotfiles/symlink-dotfiles.sh'
+
+# opencode
+alias oc='opencode'
