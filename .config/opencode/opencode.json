@@ -15,6 +15,10 @@
       "find *": "allow",
       "find * -exec *": "deny"
     },
+    "external_directory": {
+      "*": "ask",
+      "~/Repo/*": "allow"
+    },
     "glob": "allow",
     "list": "allow",
     "skill": "allow",
