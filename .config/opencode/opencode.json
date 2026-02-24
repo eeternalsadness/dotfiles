@@ -19,7 +19,8 @@
     "list": "allow",
     "skill": "allow",
     "todoread": "allow",
-    "todowrite": "allow"
+    "todowrite": "allow",
+    "rovo_get*": "allow"
   },
   "mcp": {
     "kubernetes": {
