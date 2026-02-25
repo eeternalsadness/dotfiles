@@ -20,6 +20,7 @@
       "~/Repo/*": "allow"
     },
     "glob": "allow",
+    "grep": "allow",
     "list": "allow",
     "skill": "allow",
     "todoread": "allow",
