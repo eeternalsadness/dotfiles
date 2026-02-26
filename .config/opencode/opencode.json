@@ -13,7 +13,9 @@
       "head *": "allow",
       "tail *": "allow",
       "find *": "allow",
-      "find * -exec *": "deny"
+      "find * -exec *": "deny",
+      "git status *": "allow",
+      "git log *": "allow"
     },
     "external_directory": {
       "*": "ask",
