@@ -28,7 +28,12 @@
     "skill": "allow",
     "todoread": "allow",
     "todowrite": "allow",
-    "rovo_get*": "allow"
+    "rovo_get*": "allow",
+    "rovo_search*": "allow",
+    "kubernets_pods_list_*": "allow",
+    "kubernets_resources_list": "allow",
+    "kubernets_resources_get": "allow",
+    "kubernets_namespaces_list": "allow"
   },
   "mcp": {
     "kubernetes": {
