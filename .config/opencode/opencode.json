@@ -51,6 +51,11 @@
       "enabled": true,
       "environment": {}
     },
+    "excalidraw": {
+      "type": "remote",
+      "url": "https://mcp.excalidraw.com",
+      "enabled": true
+    },
     "rovo": {
       "type": "local",
       "command": [
@@ -70,15 +75,6 @@
         "uvx",
         "awslabs.core-mcp-server@latest",
         "--no-banner"
-      ],
-      "enabled": true,
-      "environment": {}
-    },
-    "aws-eks": {
-      "type": "local",
-      "command": [
-        "uvx",
-        "awslabs.eks-mcp-server@latest"
       ],
       "enabled": true,
       "environment": {}
