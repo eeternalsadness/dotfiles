@@ -8,6 +8,7 @@
     },
     "bash": {
       "*": "ask",
+      "pwd": "allow",
       "ls *": "allow",
       "grep *": "allow",
       "head *": "allow",
@@ -28,12 +29,16 @@
     "skill": "allow",
     "todoread": "allow",
     "todowrite": "allow",
+    "rovo_fetch": "allow",
     "rovo_get*": "allow",
     "rovo_search*": "allow",
     "kubernetes_pods_list_*": "allow",
+    "kubernetes_pods_get": "allow",
+    "kubernetes_pods_log": "allow",
     "kubernetes_resources_list": "allow",
     "kubernetes_resources_get": "allow",
-    "kubernetes_namespaces_list": "allow"
+    "kubernetes_namespaces_list": "allow",
+    "kubernetes_configuration_contexts_list": "allow"
   },
   "mcp": {
     "kubernetes": {
