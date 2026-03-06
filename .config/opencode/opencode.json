@@ -11,13 +11,16 @@
       "pwd": "allow",
       "ls *": "allow",
       "grep *": "allow",
+      "rg *": "allow",
       "head *": "allow",
       "tail *": "allow",
       "find *": "allow",
       "find * -exec *": "deny",
       "git status *": "allow",
       "git log *": "allow",
-      "git diff *": "allow"
+      "git diff *": "allow",
+      "echo *": "allow",
+      "wc *": "allow"
     },
     "external_directory": {
       "*": "ask",
