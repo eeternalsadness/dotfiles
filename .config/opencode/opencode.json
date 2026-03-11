@@ -1,5 +1,19 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "yescale": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "YEScale",
+      "options": {
+        "baseURL": "https://api.yescale.vip/v1",
+      },
+      "models": {
+        "deepseek-v3.2": {
+          "name": "Deepseek V3.2"
+        }
+      }
+    }
+  },
   "permission": {
     "*": "ask",
     "read": {
@@ -9,7 +23,6 @@
     "bash": {
       "*": "ask",
       "pwd": "allow",
-      "ls *": "allow",
       "grep *": "allow",
       "rg *": "allow",
       "head *": "allow",
@@ -32,9 +45,6 @@
     "skill": "allow",
     "todoread": "allow",
     "todowrite": "allow",
-    "rovo_fetch": "allow",
-    "rovo_get*": "allow",
-    "rovo_search*": "allow",
     "kubernetes_pods_list_*": "allow",
     "kubernetes_pods_get": "allow",
     "kubernetes_pods_log": "allow",
@@ -60,40 +70,5 @@
       "url": "https://mcp.excalidraw.com",
       "enabled": true
     },
-    "rovo": {
-      "type": "local",
-      "command": [
-        "npx",
-        "--registry",
-        "https://registry.npmjs.org",
-        "-y",
-        "mcp-remote",
-        "https://mcp.atlassian.com/v1/mcp"
-      ],
-      "enabled": true,
-      "environment": {}
-    },
-    "aws-core": {
-      "type": "local",
-      "command": [
-        "uvx",
-        "awslabs.core-mcp-server@latest",
-        "--no-banner"
-      ],
-      "enabled": true,
-      "environment": {}
-    },
-    "aws-knowledge": {
-      "type": "local",
-      "command": [
-        "uvx",
-        "fastmcp",
-        "run",
-        "--no-banner",
-        "https://knowledge-mcp.global.api.aws"
-      ],
-      "enabled": true,
-      "environment": {}
-    }
   }
 }
