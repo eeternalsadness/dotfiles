@@ -33,7 +33,8 @@
       "git log *": "allow",
       "git diff *": "allow",
       "echo *": "allow",
-      "wc *": "allow"
+      "wc *": "allow",
+      "ls *": "allow"
     },
     "external_directory": {
       "*": "ask",
