@@ -1,16 +1,34 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "provider": {
-    "yescale": {
+    "yescale-deepseek": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "YEScale",
+      "name": "YEScale Deepseek",
       "options": {
         "baseURL": "https://api.yescale.vip/v1",
       },
       "models": {
         "deepseek-v3.2": {
           "name": "Deepseek V3.2"
+        },
+        "deepseek-v3.2-thinking": {
+          "name": "Deepseek V3.2 Thinking"
         }
+      }
+    },
+    "yescale-normal": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "YEScale Normal",
+      "options": {
+        "baseURL": "https://api.yescale.vip/v1",
+      },
+      "models": {
+        "glm-4.7": {
+          "name": "GLM-4.7"
+        },
+        "kimi-k2-thinking": {
+          "name": "Kimi K2"
+        },
       }
     }
   },
