@@ -34,6 +34,11 @@
   },
   "permission": {
     "*": "ask",
+    "task": {
+      "*": "ask",
+      "memory/memory": "allow",
+      "knowledge-base/knowledge-base": "allow",
+    },
     "read": {
       "*": "ask",
       "~/Repo/*": "allow"
