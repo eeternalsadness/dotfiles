@@ -57,7 +57,9 @@
       "git diff *": "allow",
       "echo *": "allow",
       "wc *": "allow",
-      "ls *": "allow"
+      "ls *": "allow",
+      "sort *": "allow",
+      "tree *": "allow",
     },
     "external_directory": {
       "*": "ask",
