@@ -3,6 +3,11 @@
   "disabled_providers": [
     "cloudflare-ai-gateway"
   ],
+  "agent": {
+    "explore": {
+      "disable": true
+    }
+  },
   "provider": {
     "yescale-deepseek": {
       "npm": "@ai-sdk/openai-compatible",
@@ -42,8 +47,7 @@
     "*": "ask",
     "task": {
       "*": "ask",
-      "memory": "allow",
-      "knowledge-base": "allow",
+      "research": "allow",
     },
     "read": {
       "*": "ask",
