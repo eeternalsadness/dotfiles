@@ -39,8 +39,8 @@
     "*": "ask",
     "task": {
       "*": "ask",
-      "memory/memory": "allow",
-      "knowledge-base/knowledge-base": "allow",
+      "memory": "allow",
+      "knowledge-base": "allow",
     },
     "read": {
       "*": "ask",
