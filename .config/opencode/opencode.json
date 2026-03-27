@@ -62,7 +62,9 @@
       "wc *": "allow",
       "ls *": "allow",
       "sort *": "allow",
+      "uniq *": "allow",
       "tree *": "allow",
+      "file *": "allow",
     },
     "external_directory": {
       "*": "ask",
