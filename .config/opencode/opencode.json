@@ -100,7 +100,7 @@
         "kubernetes-mcp-server@latest",
         "--read-only"
       ],
-      "enabled": true,
+      "enabled": false,
       "environment": {}
     },
     "excalidraw": {
