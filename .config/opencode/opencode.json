@@ -9,6 +9,9 @@
     },
     "plan": {
       "disable": true
+    },
+    "general": {
+      "disable": true
     }
   },
   "provider": {
