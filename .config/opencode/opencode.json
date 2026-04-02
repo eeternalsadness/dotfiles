@@ -127,7 +127,7 @@
     "excalidraw": {
       "type": "remote",
       "url": "https://mcp.excalidraw.com",
-      "enabled": true
+      "enabled": false
     },
   }
 }
