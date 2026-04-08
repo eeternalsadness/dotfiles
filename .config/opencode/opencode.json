@@ -86,6 +86,7 @@
       "git status *": "allow",
       "git log *": "allow",
       "git diff *": "allow",
+      "git show *": "allow",
       "echo *": "allow",
       "wc *": "allow",
       "ls *": "allow",
