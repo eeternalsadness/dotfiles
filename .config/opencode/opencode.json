@@ -112,7 +112,7 @@
     "kubernetes_resources_get": "allow",
     "kubernetes_namespaces_list": "allow",
     "kubernetes_configuration_contexts_list": "allow",
-    "excalidraw_read_*": "allow"
+    "excalidraw_*": "allow",
   },
   "mcp": {
     "kubernetes": {
