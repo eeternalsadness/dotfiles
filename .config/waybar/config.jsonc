@@ -16,17 +16,15 @@
   "modules-right": [
     //"mpd",
     //"idle_inhibitor",
-    "wireplumber",
+    //"wireplumber",
     "network",
-    "power-profiles-daemon",
+    //"power-profiles-daemon",
     "cpu",
     "memory",
     "temperature",
     //"backlight",
     //"keyboard-state",
     //"sway/language",
-    "battery",
-    //"battery#bat2",
     "clock"
     //"tray"
     //"custom/power"
@@ -146,29 +144,6 @@
       "",
       ""
     ]
-  },
-  "battery": {
-    "interval": 10,
-    "states": {
-      // "good": 95,
-      "warning": 25,
-      "critical": 15
-    },
-    "format": "{power} W   {capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "tooltip-format": "{timeTo} | Health: {health}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
   },
   "power-profiles-daemon": {
     "format": "{icon}",
