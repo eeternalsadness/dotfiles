@@ -46,12 +46,6 @@ alias p='pass show -c'
 alias vim='nvim'
 alias vi='nvim'
 
-# asusctl stuff
-if [[ -n $(which asusctl) ]] && [[ -n $(which supergfxctl) ]]; then
-  alias kb='$SCRIPTS/asusctl/toggle-keyboard-backlight.sh'
-  alias pow='$SCRIPTS/asusctl/switch-power-profile.sh'
-fi
-
 # kubernetes
 alias k='kubectl'
 alias kns='kubens'
