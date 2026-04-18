@@ -45,6 +45,7 @@ settings:
   content.javascript.clipboard:
     https://chatgpt.com: access-paste
     https://github.com: access-paste
+    https://wiki.hypr.land: access-paste
     https://wiki.hyprland.org: access-paste
   content.notifications.enabled:
     global: false
