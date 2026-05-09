@@ -40,8 +40,11 @@
         "baseURL": "http://framework.home.lan:8080/v1"
       },
       "models": {
-        "Qwen3.6-27B-UD-Q6_K_XL": {
+        "Qwen3.6-27B-Q4_K_M": {
           "name": "Qwen 3.6 27B"
+        },
+        "gpt-oss-120b-F16": {
+          "name": "GPT OSS 120B"
         },
       }
     },
