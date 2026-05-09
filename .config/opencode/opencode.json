@@ -43,6 +43,12 @@
         "Qwen3.6-27B-Q4_K_M": {
           "name": "Qwen 3.6 27B"
         },
+        "Qwen3.6-35B-A3B-MXFP4_MOE": {
+          "name": "Qwen 3.6 35B A3B (MOE)"
+        },
+        "Qwen3.6-35B-A3B-UD-Q4_K_M": {
+          "name": "Qwen 3.6 35B A3B"
+        },
         "gpt-oss-120b-F16": {
           "name": "GPT OSS 120B"
         },
