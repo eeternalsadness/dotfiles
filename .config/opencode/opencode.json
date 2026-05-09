@@ -33,6 +33,18 @@
         },
       }
     },
+    "framework": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Framework Desktop",
+      "options": {
+        "baseURL": "http://framework.home.lan:8080/v1"
+      },
+      "models": {
+        "Qwen3.6-27B-UD-Q6_K_XL": {
+          "name": "Qwen 3.6 27B"
+        },
+      }
+    },
     "yescale-deepseek": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "YEScale Deepseek",
