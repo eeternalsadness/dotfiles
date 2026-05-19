@@ -43,6 +43,7 @@ settings:
   content.geolocation:
     global: false
   content.javascript.clipboard:
+    https://brave.com: access-paste
     https://chatgpt.com: access-paste
     https://github.com: access-paste
     https://huggingface.co: access-paste
