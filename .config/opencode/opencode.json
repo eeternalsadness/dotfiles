@@ -64,6 +64,9 @@
         "gemini-3-pro-preview": {
           "name": "Gemini 3 Pro"
         },
+        "gemini-3-flash-preview": {
+          "name": "Gemini 3 Flash"
+        },
         "deepseek-v3.2-thinking": {
           "name": "Deepseek v3.2"
         },
