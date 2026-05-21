@@ -80,6 +80,7 @@
     "*": "ask",
     "task": {
       "*": "ask",
+      "knowledge-base": "allow",
       "research": "allow",
     },
     "read": {
