@@ -126,6 +126,7 @@
     "kubernetes_namespaces_list": "allow",
     "kubernetes_configuration_contexts_list": "allow",
     "excalidraw_*": "allow",
+    "duckduckgo_*": "allow",
   },
   "mcp": {
     "kubernetes": {
@@ -142,6 +143,18 @@
       "type": "remote",
       "url": "https://mcp.excalidraw.com",
       "enabled": false
+    },
+    "duckduckgo": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "duckduckgo-mcp-server",
+      ],
+      "enabled": true,
+      "environment": {
+        "DDG_SAFE_SEARCH": "STRICT",
+        "DDG_REGION": "en-us"
+      }
     },
   }
 }
