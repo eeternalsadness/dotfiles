@@ -89,7 +89,7 @@
     },
     "read": {
       "*": "ask",
-      "~/Repo/*": "allow"
+      "~/Repo/**": "allow"
     },
     "bash": {
       "*": "ask",
@@ -114,7 +114,7 @@
     },
     "external_directory": {
       "*": "ask",
-      "~/Repo/*": "allow"
+      "~/Repo/**": "allow"
     },
     "glob": "allow",
     "grep": "allow",
