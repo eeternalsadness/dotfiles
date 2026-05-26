@@ -3,7 +3,11 @@
   "disabled_providers": [
     "cloudflare-ai-gateway"
   ],
+  "default_agent": "yapper",
   "agent": {
+    "build": {
+      "disable": true
+    },
     "explore": {
       "disable": true
     },
