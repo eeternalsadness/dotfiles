@@ -20,7 +20,7 @@
   },
   "provider": {
     "bedrock-mantle": {
-      "npm": "@ai-sdk/openai-compatible",
+      "npm": "@ai-sdk/openai",
       "name": "Bedrock Mantle",
       "options": {
         "baseURL": "https://bedrock-mantle.us-east-2.api.aws/openai/v1"
