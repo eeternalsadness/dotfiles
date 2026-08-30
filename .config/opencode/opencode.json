@@ -89,8 +89,8 @@
         "gemini-3-flash-preview": {
           "name": "Gemini 3 Flash"
         },
-        "deepseek-v3.2-thinking": {
-          "name": "Deepseek v3.2"
+        "deepseek-v4-pro": {
+          "name": "Deepseek v4 Pro"
         },
         "MiniMax-M2.7": {
           "name": "MiniMax M2.7"
