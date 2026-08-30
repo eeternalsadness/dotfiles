@@ -80,7 +80,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "YEScale",
       "options": {
-        "baseURL": "https://api.yescale.vip/v1",
+        "baseURL": "https://api.yescale.io/v1",
       },
       "models": {
         "gemini-3-pro-preview": {
@@ -95,6 +95,9 @@
         "MiniMax-M2.7": {
           "name": "MiniMax M2.7"
         },
+        "glm-5.3": {
+          "name": "GLM 5.3"
+        }
       }
     }
   },
