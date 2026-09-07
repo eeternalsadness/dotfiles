@@ -117,6 +117,7 @@
       "pwd": "allow",
       "grep *": "allow",
       "rg *": "allow",
+      "cat *": "allow",
       "head *": "allow",
       "tail *": "allow",
       "find *": "allow",
