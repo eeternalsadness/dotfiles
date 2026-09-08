@@ -133,6 +133,7 @@
       "uniq *": "allow",
       "tree *": "allow",
       "file *": "allow",
+      "which *": "allow",
     },
     "external_directory": {
       "*": "ask",
