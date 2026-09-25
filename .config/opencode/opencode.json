@@ -126,6 +126,7 @@
       "git log *": "allow",
       "git diff *": "allow",
       "git show *": "allow",
+      "git grep *": "allow",
       "echo *": "allow",
       "wc *": "allow",
       "ls *": "allow",
