@@ -134,6 +134,7 @@
       "tree *": "allow",
       "file *": "allow",
       "which *": "allow",
+      "cut *": "allow",
     },
     "external_directory": {
       "*": "ask",
