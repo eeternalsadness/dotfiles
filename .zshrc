@@ -27,7 +27,7 @@ fi
 type kubectl &>/dev/null && source <(kubectl completion zsh)
 type talosctl &>/dev/null && source <(talosctl completion zsh)
 type helm &>/dev/null && source <(helm completion zsh)
-type opencode &>/dev/null && source <(opencode completion)
+type opencode &>/dev/null && source <(opencode --completions zsh)
 
 # zsh extras
 if type brew &>/dev/null; then
