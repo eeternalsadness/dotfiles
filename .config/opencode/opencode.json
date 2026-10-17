@@ -1,46 +1,46 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "disabled_providers": [
-    "cloudflare-ai-gateway"
+  "policies": [
+    { "action": "provider.use", "resource": "cloudflare-ai-gateway", "effect": "deny" }
   ],
   "default_agent": "yapper",
-  "agent": {
+  "agents": {
     "build": {
-      "disable": true
+      "disabled": true
     },
     "explore": {
-      "disable": true
+      "disabled": true
     },
     "plan": {
-      "disable": true
+      "disabled": true
     },
     "general": {
-      "disable": true
+      "disabled": true
     }
   },
-  "provider": {
+  "providers": {
     "bedrock-mantle": {
-      "npm": "@ai-sdk/openai",
+      "package": "aisdk:@ai-sdk/openai",
       "name": "Bedrock Mantle",
-      "options": {
+      "settings": {
         "baseURL": "https://bedrock-mantle.us-east-2.api.aws/openai/v1"
       },
       "models": {
         "openai.gpt-5.5": {
           "name": "GPT 5.5"
-        },
+        }
       }
     },
     "amazon-bedrock": {
-      "options": {
+      "settings": {
         "region": "us-east-1",
         "profile": "razer-csvc"
       }
     },
     "lmstudio": {
-      "npm": "@ai-sdk/openai-compatible",
+      "package": "aisdk:@ai-sdk/openai-compatible",
       "name": "LM Studio",
-      "options": {
+      "settings": {
         "baseURL": "http://localhost:1234/v1"
       },
       "models": {
@@ -52,13 +52,13 @@
         },
         "openai/gpt-oss-20b": {
           "name": "GPT OSS 20B"
-        },
+        }
       }
     },
     "framework": {
-      "npm": "@ai-sdk/openai-compatible",
+      "package": "aisdk:@ai-sdk/openai-compatible",
       "name": "Framework Desktop",
-      "options": {
+      "settings": {
         "baseURL": "http://framework.home.lan:8080/v1"
       },
       "models": {
@@ -73,14 +73,14 @@
         },
         "gpt-oss-120b-F16": {
           "name": "GPT OSS 120B"
-        },
+        }
       }
     },
     "yescale": {
-      "npm": "@ai-sdk/openai-compatible",
+      "package": "aisdk:@ai-sdk/openai-compatible",
       "name": "YEScale",
-      "options": {
-        "baseURL": "https://api.yescale.io/v1",
+      "settings": {
+        "baseURL": "https://api.yescale.io/v1"
       },
       "models": {
         "gemini-3-pro-preview": {
@@ -101,89 +101,83 @@
       }
     }
   },
-  "permission": {
-    "*": "ask",
-    "task": {
-      "*": "ask",
-      "knowledge-base": "allow",
-      "research": "allow",
-    },
-    "read": {
-      "*": "ask",
-      "~/Repo/**": "allow"
-    },
-    "bash": {
-      "*": "ask",
-      "pwd": "allow",
-      "grep *": "allow",
-      "rg *": "allow",
-      "cat *": "allow",
-      "head *": "allow",
-      "tail *": "allow",
-      "find *": "allow",
-      "find * -exec *": "deny",
-      "git status *": "allow",
-      "git log *": "allow",
-      "git diff *": "allow",
-      "git show *": "allow",
-      "git grep *": "allow",
-      "echo *": "allow",
-      "wc *": "allow",
-      "ls *": "allow",
-      "sort *": "allow",
-      "uniq *": "allow",
-      "tree *": "allow",
-      "file *": "allow",
-      "which *": "allow",
-      "cut *": "allow",
-    },
-    "external_directory": {
-      "*": "ask",
-      "~/Repo/**": "allow"
-    },
-    "glob": "allow",
-    "grep": "allow",
-    "list": "allow",
-    "skill": "allow",
-    "todoread": "allow",
-    "todowrite": "allow",
-    "kubernetes_pods_list_*": "allow",
-    "kubernetes_pods_get": "allow",
-    "kubernetes_pods_log": "allow",
-    "kubernetes_resources_list": "allow",
-    "kubernetes_resources_get": "allow",
-    "kubernetes_namespaces_list": "allow",
-    "kubernetes_configuration_contexts_list": "allow",
-    "excalidraw_*": "allow",
-    "duckduckgo_*": "allow",
-  },
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "ask" },
+    { "action": "subagent", "resource": "*", "effect": "ask" },
+    { "action": "subagent", "resource": "knowledge-base", "effect": "allow" },
+    { "action": "subagent", "resource": "research", "effect": "allow" },
+    { "action": "read", "resource": "*", "effect": "ask" },
+    { "action": "read", "resource": "~/Repo/**", "effect": "allow" },
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "pwd", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "find * -exec *", "effect": "deny" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
+    { "action": "shell", "resource": "git grep *", "effect": "allow" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "sort *", "effect": "allow" },
+    { "action": "shell", "resource": "uniq *", "effect": "allow" },
+    { "action": "shell", "resource": "tree *", "effect": "allow" },
+    { "action": "shell", "resource": "file *", "effect": "allow" },
+    { "action": "shell", "resource": "which *", "effect": "allow" },
+    { "action": "shell", "resource": "cut *", "effect": "allow" },
+    { "action": "external_directory", "resource": "*", "effect": "ask" },
+    { "action": "external_directory", "resource": "~/Repo/**", "effect": "allow" },
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "list", "resource": "*", "effect": "allow" },
+    { "action": "skill", "resource": "*", "effect": "allow" },
+    { "action": "todoread", "resource": "*", "effect": "allow" },
+    { "action": "todowrite", "resource": "*", "effect": "allow" },
+    { "action": "kubernetes_pods_list_*", "resource": "*", "effect": "allow" },
+    { "action": "kubernetes_pods_get", "resource": "*", "effect": "allow" },
+    { "action": "kubernetes_pods_log", "resource": "*", "effect": "allow" },
+    { "action": "kubernetes_resources_list", "resource": "*", "effect": "allow" },
+    { "action": "kubernetes_resources_get", "resource": "*", "effect": "allow" },
+    { "action": "kubernetes_namespaces_list", "resource": "*", "effect": "allow" },
+    { "action": "kubernetes_configuration_contexts_list", "resource": "*", "effect": "allow" },
+    { "action": "excalidraw_*", "resource": "*", "effect": "allow" },
+    { "action": "duckduckgo_*", "resource": "*", "effect": "allow" }
+  ],
   "mcp": {
-    "kubernetes": {
-      "type": "local",
-      "command": [
-        "uvx",
-        "kubernetes-mcp-server@latest",
-        "--read-only"
-      ],
-      "enabled": false,
-      "environment": {}
-    },
-    "excalidraw": {
-      "type": "remote",
-      "url": "https://mcp.excalidraw.com",
-      "enabled": false
-    },
-    "duckduckgo": {
-      "type": "local",
-      "command": [
-        "uvx",
-        "duckduckgo-mcp-server",
-      ],
-      "enabled": true,
-      "environment": {
-        "DDG_SAFE_SEARCH": "STRICT",
-        "DDG_REGION": "en-us"
+    "servers": {
+      "kubernetes": {
+        "type": "local",
+        "command": [
+          "uvx",
+          "kubernetes-mcp-server@latest",
+          "--read-only"
+        ],
+        "disabled": true,
+        "environment": {}
+      },
+      "excalidraw": {
+        "type": "remote",
+        "url": "https://mcp.excalidraw.com",
+        "disabled": true
+      },
+      "duckduckgo": {
+        "type": "local",
+        "command": [
+          "uvx",
+          "duckduckgo-mcp-server"
+        ],
+        "disabled": false,
+        "environment": {
+          "DDG_SAFE_SEARCH": "STRICT",
+          "DDG_REGION": "en-us"
+        }
       }
-    },
+    }
   }
 }
