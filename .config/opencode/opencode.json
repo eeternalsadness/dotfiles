@@ -69,11 +69,26 @@
         "Qwen3.8-Flash-Next": {
           "name": "Qwen 3.8 Flash Next"
         },
+        "Qwen3.8-27B": {
+          "name": "Qwen 3.8 27B"
+        },
         "Qwen3.6-35B-A3B": {
           "name": "Qwen 3.6 35B A3B"
         },
         "Gemma-4-E4B": {
           "name": "Gemma 4 E4B"
+        }
+      }
+    },
+    "halogen-flash-server": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "name": "Halogen Flash Server",
+      "settings": {
+        "baseURL": "http://framework.home.lan:8731/v1"
+      },
+      "models": {
+        "halogen-qwen3.8-flash-next": {
+          "name": "Qwen 3.8 Flash Next (Halogen)"
         }
       }
     },
