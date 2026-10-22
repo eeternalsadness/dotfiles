@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$HOME/go/bin:$PATH
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$HOME/go/bin:$PATH"
 export REPO="$HOME/Repo"
 export SCRIPTS="$HOME/Repo/personal/scripts"
 export OBSIDIAN="$HOME/Obsidian"
