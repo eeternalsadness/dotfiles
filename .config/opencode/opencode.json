@@ -8,6 +8,9 @@
     }
   ],
   "default_agent": "yapper",
+  "plugins": [
+    "-memory-manager"
+  ],
   "agents": {
     "build": {
       "disabled": true
